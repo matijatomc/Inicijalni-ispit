@@ -13,13 +13,22 @@ namespace tomcMatijaInicijalniIspitZadatak4
             List<Kandidati> kandidati = new List<Kandidati>();
             int tenisac1;
             int tenisac2;
+            int brUtakmice=1;
 
-            for (int i = 0; i < 32; i++)
+            RandomGenerator generator = new RandomGenerator();
+            tenisac1 = generator.RandomNumber(1, 32);
+            kandidati.Add(new Kandidati() { redniBroj = tenisac1 });
+
+            do
             {
-                RandomGenerator generator = new RandomGenerator();
-                tenisac1 = generator.RandomNumber(1, 32);
                 tenisac2 = generator.RandomNumber(1, 32);
+            } while (tenisac2 == tenisac1);
+            kandidati.Add(new Kandidati() { redniBroj = tenisac2 });
 
+            Console.WriteLine($"{brUtakmice}. utakmica je između: Tenisaca {}");
+            for (int i = 0; i < 30; i++)
+            {
+                
                 
             }
         }
